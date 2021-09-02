@@ -56,8 +56,8 @@ body {
   height: 100%;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .container-all-cards {
@@ -65,29 +65,43 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+}
+
+.card-container {
+  padding: 32px 32px;
+  margin: 0;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  max-width: 304px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .card-container,
 .price-content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
-.card-container {
-  padding: 32px 16px;
-  margin: 0 16px;
-  background: #ffffff;
-  border-radius: 8px;
-  border: 1px solid #fff;
+.price-content {
+  background-color: transparent;
+  align-items: flex-start;
+  width: 100%;
+  display: flex;
+  padding: 24px 0 32px 0;
 }
 
 .card-container img {
   object-fit: scale-down;
+  background-color: transparent;
 }
 
-.card-container button {
+.card-container .add-to-cart {
   padding: 12px 24px;
 
   width: 240px;
@@ -96,4 +110,144 @@ body {
   background: #40b25c;
   border-radius: 5px;
   border: 1px solid #40b25c;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.installments-price {
+  font-weight: bold;
+  color: #000;
+  background-color: transparent;
+}
+.installments-info {
+  font-size: 12px;
+  line-height: 16px;
+  color: #848587;
+  background-color: transparent;
+}
+
+.product-name {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #1c1c1c;
+  background-color: transparent;
+  text-align: left;
+}
+.selling-price {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #da4b4f;
+  background-color: transparent;
+}
+.list-price {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration-line: line-through;
+  color: #b5b5b6;
+  background-color: transparent;
+}
+
+.card-container .add-to-cart:hover,
+.card-container .add-to-cart:active {
+  background-color: #1c6c3e;
+  border-color: #1c6c3e;
+}
+
+.wish-list-button {
+  width: 48px;
+  height: 48px;
+  background-color: #f2f3f6;
+  border-radius: 100%;
+  border: 1px solid #f2f3f6;
+
+  right: 40px;
+  position: absolute;
+}
+
+.wish-list-content {
+  background-color: transparent;
+  position: absolute;
+  right: 40px;
+}
+.wish-list-button svg,
+.wish-list-button-true svg {
+  display: flex;
+  margin: 0 auto;
+}
+.wish-list-button:hover {
+  background-color: #fee5ec;
+}
+.wish-list-button:hover svg {
+  background-color: #fee5ec;
+}
+
+.add-to-cart-true {
+  padding: 12px 24px;
+
+  width: 240px;
+  height: 48px;
+
+  background: #a3f9b9;
+  border-radius: 5px;
+  border: 1px solid #a3f9b9;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-to-cart-true .checked {
+  background: #a3f9b9;
+  margin-right: 16px;
+}
+
+.wish-list-button:hover {
+  background-color: #fee5ec;
+}
+.wish-list-button:hover svg {
+  display: none;
+}
+
+.wish-list-button:hover::before {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg width='26' height='23' viewBox='0 0 26 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.1494 2.85655C22.5629 2.26797 21.8667 1.80107 21.1003 1.48251C20.334 1.16396 19.5126 1 18.6831 1C17.8535 1 17.0321 1.16396 16.2658 1.48251C15.4994 1.80107 14.8032 2.26797 14.2167 2.85655L12.9997 4.07749L11.7826 2.85655C10.5981 1.66822 8.99152 1.00062 7.31633 1.00062C5.64114 1.00062 4.03455 1.66822 2.85001 2.85655C1.66547 4.04489 1 5.65662 1 7.33718C1 9.01774 1.66547 10.6295 2.85001 11.8178L4.06705 13.0387L12.9997 22L21.9323 13.0387L23.1494 11.8178C23.7361 11.2295 24.2015 10.531 24.519 9.76219C24.8366 8.99339 25 8.16936 25 7.33718C25 6.50499 24.8366 5.68096 24.519 4.91216C24.2015 4.14336 23.7361 3.44486 23.1494 2.85655Z' fill='%23FEE5EC' stroke='%23DA4B4F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.wish-list-button-true {
+  width: 48px;
+  height: 48px;
+  background-color: #da4b4f;
+  border-radius: 100%;
+  border: 1px solid #da4b4f;
+
+  right: 40px;
+  position: absolute;
+}
+.wish-list-button-true svg {
+  background-color: transparent;
+}
+
+.wish-list-button-true:hover {
+  background-color: #c22539;
 }
