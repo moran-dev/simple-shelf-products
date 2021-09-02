@@ -50,17 +50,17 @@ const CardsInfo = (props: Props) => {
       }
       if (wishListState === false) {
         const customWishFalse = (
-            <button className="wish-list-button" onClick={handleSubmitWish}>
-              <WishListFalse />
-            </button>
+          <button className="wish-list-button" onClick={handleSubmitWish}>
+            <WishListFalse />
+          </button>
         );
         setWishListStateV2(Object(customWishFalse));
       }
       if (wishListState === true) {
         const customWishTrue = (
-            <button className="wish-list-button-true" onClick={handleSubmitWish}>
-              <WishListTrue />
-            </button>
+          <button className="wish-list-button-true" onClick={handleSubmitWish}>
+            <WishListTrue />
+          </button>
         );
         setWishListStateV2(Object(customWishTrue));
       }
@@ -74,9 +74,7 @@ const CardsInfo = (props: Props) => {
         {products.length !== 0
           ? products.map((info) => (
               <div className="card-container">
-                <>
-                  {wishListStateV2}
-                </>
+                <>{wishListStateV2}</>
                 <img
                   alt="info"
                   src={info.imageUrl}
@@ -98,13 +96,14 @@ const CardsInfo = (props: Props) => {
                     })}
                   </span>
                   <span className="installments-info">
-                    Em até
+                    em até
                     <span className="installments-price">
+                      {" "}
                       {info.numberOfInstallments}x de{" "}
                       {info.installmentsValue.toLocaleString("pt-BR", {
                         style: "currency",
                         currency: "BRL",
-                      })}
+                      })}{" "}
                     </span>
                     sem juros
                   </span>
